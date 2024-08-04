@@ -40,4 +40,5 @@ public class LoginController {
         response.setData(userName);
         return ResponseEntity.ok(response);
     }
+
 }
