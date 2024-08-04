@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/Modify")
+@RequestMapping("/v1/modify")
 
 public class ModifyController {
 
@@ -24,12 +24,11 @@ public class ModifyController {
     private ModifyService modifyService = new ModifyService();
 
     @PutMapping("/updateUser")
-    public CommonResponse<ECBUserdto> updateUser(@RequestBody ECBUserdto user) {
+    public CommonResponse<String> updateUser(@RequestBody ECBUserdto user) {
         ECBUserdto updatedUser = modifyService.updateUser(user);
-        CommonResponse<ECBUserdto> response = new CommonResponse<>();
+        CommonResponse<String> response = new CommonResponse<>();
         response.setCode(200);
         response.setMessage("User updated successfully");
-        response.setData(updatedUser);
         return response;
     }
 
